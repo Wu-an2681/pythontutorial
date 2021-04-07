@@ -29,3 +29,48 @@ git reset 057d
 #回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit.(代码回滚到上个版本，并提交git)
 git revert HEAD
 
+
+####Sample
+
+(C:\Users\chaowang\Anaconda3\envs\py27) D:\0_projects\pythontutorial>git add .
+
+(C:\Users\chaowang\Anaconda3\envs\py27) D:\0_projects\pythontutorial>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   Misc/RunWithScriptParameters.py
+        new file:   doc/discarda_local_change
+        new file:   doc/ignore
+
+
+(C:\Users\chaowang\Anaconda3\envs\py27) D:\0_projects\pythontutorial>git commit -m "update doc"
+[master 36cd967] update doc
+ 3 files changed, 52 insertions(+)
+ create mode 100644 doc/discarda_local_change
+ create mode 100644 doc/ignore
+
+(C:\Users\chaowang\Anaconda3\envs\py27) D:\0_projects\pythontutorial>git add .
+
+(C:\Users\chaowang\Anaconda3\envs\py27) D:\0_projects\pythontutorial>git commit --amend
+error: cannot spawn vi: No such file or directory
+error: unable to start editor 'vi'
+Please supply the message using either -m or -F option.
+
+(C:\Users\chaowang\Anaconda3\envs\py27) D:\0_projects\pythontutorial>git commit --amend -m "update doc via amend parameter"
+[master af9d460] update doc via amend parameter
+ Date: Thu Mar 16 16:09:16 2017 +0800
+ 3 files changed, 53 insertions(+)
+ create mode 100644 doc/discarda_local_change
+ create mode 100644 doc/ignore
+
+(C:\Users\chaowang\Anaconda3\envs\py27) D:\0_projects\pythontutorial>git push
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.52 KiB | 0 bytes/s, done.
+Total 7 (delta 2), reused 0 (delta 0)
+To http://git.oschina.net/darkdroid/pythontutorial
+   1dcfa64..af9d460  master -> master
+
